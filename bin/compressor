@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Please provide a directory name"
+  exit 1
+fi
+
+if [ ! -d "$1" ]; then
+  echo "Directory not found: $1"
+  exit 1
+fi
+
+tar -czf "${1}.tar.gz" "$1"
+
+echo "Compressed archive created: $1.tar.gz"
